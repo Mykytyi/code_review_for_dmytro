@@ -1,0 +1,227 @@
+.navLine:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 5;
+  animation-name: chngOpacity;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.navLine {
+  background-image: linear-gradient(45deg, #b55fe6, #583ae5);
+  height: 200px;
+}
+
+.todoWrap {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.mainHeader {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  min-width: 460px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+}
+
+.wrapForTitle {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+
+.mainHeader button {
+  width: 100px;
+  height: 50px;
+  right: 20px;
+  bottom: 20px;
+  background-color: #583ac8;
+  position: absolute;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.mainHeader button:hover {
+  background-color: #5235b0;
+}
+
+.mainHeader h2 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 44px;
+}
+
+.mainHeader p {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+.mainTasks {
+  width: 100%;
+  min-height: 400px;
+  /*border: 1px solid grey;*/
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.listOfTasks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listOfTasks .listItemAdd {
+  cursor: pointer;
+}
+
+.listOfTasks .listItemAdd span{
+  position: absolute;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  /*border: 1px solid rgba(0,0,0,0.3);*/
+  font-size: 0;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~Making up the Plus~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`*/
+
+.listOfTasks .listItemAdd .wrapForPlus {
+  position: relative;
+}
+
+.listOfTasks .listItemAdd .wrapForPlus:before, .listOfTasks .listItemAdd .wrapForPlus:after {
+  content: " ";
+  position: absolute;
+  display: block;
+  top: 2px;
+  left: 14px;
+  width: 2px;
+  height: 25px;
+  background-color: dodgerblue;
+}
+
+.listOfTasks .listItemAdd .wrapForPlus:before {
+  transform: rotate(90deg)
+}
+
+.listOfTasks .listItemAdd:hover .wrapForPlus:before {
+  background-color: #49b8ff;
+}
+
+.listOfTasks .listItemAdd .wrapForPlus:after {
+  transform: rotate(0deg)
+}
+
+.listOfTasks .listItemAdd:hover .wrapForPlus:after {
+  background-color: #49b8ff;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~Finishing making up the plus~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`*/
+
+.listOfTasks .listItemAdd .addTaskText {
+  display: block;
+  padding-left: 50px;
+  padding-top: 23px;
+  width: 100%;
+  height: 100%;
+  color: dodgerblue;
+}
+
+.listOfTasks .listItemAdd:hover .addTaskText {
+  color: #49b8ff;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~Wrap for adding task~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.wrapForAddingTask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(122,135,129,0.22);
+}
+
+div .disabled {
+  display: none;
+}
+
+.wrapForAddingTask .addingTaskField {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px;
+  min-height: 250px;
+  background-color: white;
+  margin: 13% auto;
+  border: 1px solid rgb(152, 152, 152);
+  color: rgba(87, 99, 87, 0.8);
+  box-sizing: border-box;
+}
+
+.addingTaskField .addingTaskForm {
+  display: flex;
+  height: 250px;
+  padding: 35px 15px 15px 15px;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.addingTaskField .addingTaskForm input {
+  /*border: none;*/
+  width: 100%;
+  height: 45px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: black;
+  border: none;
+  outline: none;
+  background-color: rgba(122,135,129,0.22);
+}
+
+.addingTaskField .fieldWithButtons {
+  display: flex;
+  margin-top: 25px;
+  justify-content: space-around;
+}
+
+.addingTaskField .fieldWithButtons button {
+  display: block;
+  width: 90px;
+  height: 40px;
+  border: none;
+  background-color: rgba(68, 161, 217, 0.85);
+  color: white;
+  font-size: 16px;
+}
+
+.addingTaskField .fieldWithButtons button:hover {
+  background-color: rgba(75, 185, 217, 0.85);
+}
+
+@keyframes chngOpacity {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
